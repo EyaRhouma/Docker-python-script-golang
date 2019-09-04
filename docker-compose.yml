@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  or-go:
+    image: or-go:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile.go
+    depends_on: 
+      - "or-python"
+  
+  or-python:
+    image: or-python:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile.python
+    
